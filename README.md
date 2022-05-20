@@ -2,6 +2,13 @@
 
 > Simple buzzer for quizzes
 
+> Forked from shatgupt/buzzer
+> Changes made:
+	- allowing buzzing from any key of the keyboard
+	- invert default for the countdown 
+	- play a sound during the countdown and when it is finished
+	- Set an option to only accept the first buzz - locking other buzzers 
+
 [![Buzzer](https://lh3.googleusercontent.com/VFLbi-vC33d_Oc8aS7d7w98SEp4XEbXFZE8LLdEXLghelS_CnKfgdUrvkiT7aQKYSfAPSJm_YWdDb90MQ056xJuqe_4TNS9rkeka1wiUOGZnEpWE7GXBWvqGlmQSow_mDyLJ0G5WQGI=w2400)](https://photos.app.goo.gl/kDwm6TjBK42QBR739)
 
 ## Features
@@ -36,3 +43,10 @@
 
 ## License
 [MIT](LICENSE)
+
+
+#Sounds licence
+
+The sounds used are coming from lasonotheque.org and are licensed under CC0 1.0 - Universal (https://lasonotheque.org/droit.html)
+Consider making a donation (https://lasonotheque.org/soutien.html)
+
