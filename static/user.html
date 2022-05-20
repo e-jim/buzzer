@@ -211,6 +211,13 @@
           }
         })
 
+        socket.on('user-buzzed', () => {
+          buzzerActive = false
+          buzzer.classList.add('buzzed')
+          // buzzerText.textContent = 'BUZZED'
+          buzzer.title = 'Buzzer Inactive'
+        })
+
         socket.on('event-restarted', () => {
           location.reload(false)
         })

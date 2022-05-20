@@ -122,6 +122,8 @@ user.on('connection', (socket) => {
       console.log(`Buzz from ${socket.uname}`)
       board.emit('user-buzzed', socket.uname)
       host.emit('user-buzzed', socket.uname)
+      // J'envoie aussi l'info aux users --> comme ça ils peuvent couper leur buzzer ou prendre une autre action
+      user.emit('user-buzzed', socket.uname)
       // io.emit('user-buzzed', socket.uname)
     } else {
       console.log(`Inactive buzz from ${socket.uname}`)
