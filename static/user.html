@@ -239,6 +239,8 @@
 
       buzzer.addEventListener('mousedown', buzz)
       buzzer.addEventListener('touchstart', buzz, {passive: true})
+      window.addEventListener('keypress', buzz)
+
     </script>
   </body>
 </html>
