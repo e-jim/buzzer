@@ -154,6 +154,13 @@
       const buzzerAudio = $('#buzzer-audio')
       let buzzerActive = false
       let socket
+      //Tentative que par défaut le client soit inactif
+      buzzer.classList.add('buzzed')
+      // buzzerText.textContent = 'BUZZED'
+      buzzer.title = 'Buzzer Inactive'
+
+
+      
 
       // set name if present in URL
       name.value = location.hash.substring(1)
