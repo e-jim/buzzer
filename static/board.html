@@ -47,7 +47,9 @@
     <h1 id="buzzer-state">Event Started</h1>
 
     <div class="hide">
-      <h1>Countdown Clock</h1>
+      <h1>Compte à rebours</h1>
+      <audio id="tictac-audio" src="tictac.mp3" loop=true></audio>
+      <audio id="dingdong-audio" src="dingdong.mp3"></audio>
       <div id="clock-container">
         <span class="minutes">00</span>
         <span>:</span>
@@ -65,6 +67,7 @@
       const buzzList = $('#buzz-list')
       const buzzListContainer = buzzList.parentNode
       const clock = $('#clock-container')
+      const tictacAudio = $('#tictac-audio')
       const countdownContainer = clock.parentNode
       const toggleStates = {'active': 'inactive', 'inactive': 'active'}
       let timeInterval
@@ -171,7 +174,7 @@
 
       socket.on('event-restarted', () => {
         buzzList.innerHTML = ''
-        buzzerState.textContent = 'Event Started'
+        buzzerState.textContent = 'C\'est parti!!!'
         buzzerState.classList.remove('active', 'inactive')
         hide(buzzListContainer)
         hide(countdownContainer)
@@ -191,6 +194,8 @@
       socket.on('countdown-started', (data) => {
         countoverAction = data.action
         initializeCountdown(clock, new Date(Date.now() + (parseInt(data.sec) * 1000)))
+	tictacAudio.play()
+
         // clock.classList.remove('inactive')
         hide(buzzerState)
         hide(buzzListContainer)
@@ -198,6 +203,8 @@
       })
 
       window.addEventListener('countdownover', () => {
+	tictacAudio.pause()
+        $('#dingdong-audio').play()
         socket.emit(countoverAction)
         // clock.classList.add('inactive')
       }, true)
