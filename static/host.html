@@ -275,7 +275,7 @@
         })
 
         // TODO: activate/deactive on countdown over
-        let countoverAction = 'activate-buzzer'
+        let countoverAction = 'deactivate-buzzer'
         $('#start-countdown').addEventListener('click', () => {
           socket.emit('start-countdown', {
             sec: $('#count-to').value,
