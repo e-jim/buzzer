@@ -73,7 +73,16 @@
       let timeInterval
       
       const updateState = (state) => {
+	      if (state === "inactive")
+	      {
+        buzzerState.textContent = 'Buzzers désactivés.'
+	      }
+	      else if (state === "active"){
+		              buzzerState.textContent = 'A vos buzzers!'
+	      }
+	      else {
         buzzerState.textContent = 'Buzzers ' + state
+	      }
         buzzerState.classList.add(state)
         buzzerState.classList.remove(toggleStates[state], 'hide')
       }
